@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 00:48:30 by tbalci            #+#    #+#             */
-/*   Updated: 2023/10/17 13:56:09 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/10/17 14:38:29 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ void	ft_y(t_data *datas, char *av1);
 int		ft_argscontrol(char *str);
 char	*ft_strtrim(char const *s1, char const *set);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+void	ft_perimetercheck(t_data *datas);
+void	ft_perimetercheck(t_data *datas);
+
 
 #endif

@@ -1,4 +1,4 @@
-SRCS = getmap.c so_long.c utils.c ft_error.c
+SRCS = getmap.c so_long.c utils.c ft_error.c mapcontrol.c
 
 
 NAME = so_long
