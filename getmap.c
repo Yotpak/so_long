@@ -37,6 +37,7 @@ void	ft_map(t_data *datas, char *av1, int fd)
 
 	i = 0;
 	ft_y(datas, av1);
+	ft_opencontrol(fd);
 	datas->map = malloc(sizeof(char *) * datas->y + 1);
 	datas->map[i] = get_next_line(fd);
 	while (datas->map[i])

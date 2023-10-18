@@ -18,24 +18,52 @@ void	ft_perimetercheck(t_data *datas)
 	int	j;
 
 	i = 0;
-	while (datas->map[0][i] != '\0')
+	while (datas->map[0][i])
 	{
 		if (datas->map[0][i] != '1')
-			ft_printerror("Perimeter Check Failure!\n");
+			ft_printerror("Perimeter Check Failure1!\n");
 		i++;
 	}
 	i = 0;
 	while (datas->map[datas->y - 1][i])
 	{
 		if (datas->map[datas->y - 1][i] != '1')
-			ft_printerror("Perimeter Check Failure!\n");
+			ft_printerror("Perimeter Check Failure!2\n");
 		i++;
 	}
 	j = 1;
-	while (j < (datas->y - 2))
+	while (j <= (datas->y - 2))
 	{
-		if (datas->map[j][0] != '1' && datas->map[j][(datas->x - 1)])
-			ft_printerror("Perimeter Check Failure\n");
+		if (datas->map[j][0] != '1' || datas->map[j][(datas->x - 1)] != '1')
+			ft_printerror("Perimeter Check Failure!3\n");	
 		j++;
 	}
+}
+
+void	ft_collcount(t_data *datas)
+{
+	int	j;
+	int	i;
+
+	i = 1;
+	j = 0;
+	datas->p = 0;
+	datas->coll = 0;
+	datas->ex = 0;
+	while (i < (datas->y - 1))
+	{
+		j = 0;
+		while (datas->map[i][j])
+		{
+			if (datas->map[i][j] == 'P')
+				datas->p += 1;
+			else if (datas->map[i][j] == 'C')
+				datas->coll += 1;
+			else if (datas->map[i][j] == 'E')
+				datas->ex += 1;
+			j++;	
+		}
+		i++;
+	}
+	ft_mapdatascontrol(datas);
 }

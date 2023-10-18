@@ -36,3 +36,20 @@ int	ft_argscontrol(char *str) //.ber
 		return (1);
 	return (0);
 }
+
+void	ft_mapdatascontrol(t_data *datas)
+{
+	if (datas->p == 0 || datas->p > 1)
+		ft_printerror("Player Count Error\n");
+	if (datas->ex == 0 || datas->ex > 1)
+		ft_printerror("Exit Count Error\n");
+	if (datas->coll == 0)
+		ft_printerror("Nothing to collect on the map!\n");
+}
+
+void	ft_opencontrol(int fd)
+{
+	if (fd == -1)
+		printf("Open Function Failure!\n");
+	exit (1);
+}

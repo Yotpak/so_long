@@ -22,10 +22,11 @@ int main(int ac, char **av)
 	if (ac == 2)
 	{
 		if (ft_argscontrol(av[1]))
-		{	
+		{
 			fd = open(av[1], O_RDONLY);
-			ft_map(datas, av[1], fd);//map, c_map, x ve y alındı.
+			ft_map(datas, av[1], fd);
 			ft_perimetercheck(datas);
+			ft_collcount(datas);
 		}
 		else
 			ft_printerror("Second Argument Error!\n");

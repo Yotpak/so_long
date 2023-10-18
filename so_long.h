@@ -29,6 +29,8 @@ typedef struct s_data
 	int		x;
 	int		y;
 	int		coll;
+	int		p;
+	int		ex;
 	int		p_step;
 }			t_data;
 
@@ -38,10 +40,12 @@ void	ft_cmap(t_data *datas);
 void	ft_map(t_data *datas, char *av1, int fd);
 void	ft_y(t_data *datas, char *av1);
 int		ft_argscontrol(char *str);
-char	*ft_strtrim(char const *s1, char const *set);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 void	ft_perimetercheck(t_data *datas);
 void	ft_perimetercheck(t_data *datas);
+void	ft_mapdatascontrol(t_data *datas);
+void	ft_collcount(t_data *datas);
+void	ft_opencontrol(int fd);
+
 
 
 #endif
