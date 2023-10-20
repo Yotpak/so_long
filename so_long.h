@@ -24,7 +24,7 @@ typedef struct s_data
 {
 	void	*mlx;
 	void	*mlx_win;
-	void	*img[5];
+	void	**img;
 	char	**map;
 	char	**v_map;
 	int		x;
@@ -36,10 +36,11 @@ typedef struct s_data
 	int		valid_coll;
 	int		valid_exit;
 	int		p_step;
-	int		p_l[2];
+	int		*p_l;
 }			t_data;
 
 void	ft_printerror(char *str);
+void	ft_mapinsidecontrol(t_data *datas);
 void	ft_cmap(t_data *datas);
 void	ft_map(t_data *datas, char *av1, int fd);
 void	ft_y(t_data *datas, char *av1);
@@ -62,10 +63,11 @@ void	ft_right_exit(t_data *datas);
 void	ft_up_exit(t_data *datas);
 void	ft_down_exit(t_data *datas);
 void	ft_unvalid_map(t_data *data, int x, int y);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_itoa(int n);
 int		ft_argscontrol(char *str);
-int		ft_close_window(int keycode, t_data *img);
-int		ft_closeclose(t_data *img);
+int		ft_keyboardhook(int keycode, t_data *datas);
+int	ft_mousehook(t_data *datas);
 
 #endif

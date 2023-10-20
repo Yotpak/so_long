@@ -12,11 +12,12 @@
 
 #include "so_long.h"
 
-void	ft_imtomlx(t_data *datas)
+void	ft_imtomlx(t_data *datas) // free isteyebilir.
 {
 	int	v;
 
 	v = 64;
+	datas->img = ft_calloc(sizeof(void *), 5); 
 	datas->img[0] = mlx_xpm_file_to_image(datas->mlx,
 			"./img/exit2.xpm", &v, &v);
 	datas->img[1] = mlx_xpm_file_to_image(datas->mlx,
@@ -63,16 +64,3 @@ void	ft_transfertomap(t_data *datas)
 	}
 }
 
-void	ft_mlxinit(t_data *datas)
-{
-	datas->mlx = mlx_init();
-	if (datas->x >= 30 || datas->y >= 17)
-		ft_printerror("Map is so big!!!");
-	datas->mlx_win = mlx_new_window(datas->mlx,
-			64 * datas->x, 64 * datas->y, "so_long");
-	ft_imtomlx(datas);
-	ft_transfertomap(datas);
-	mlx_key_hook(datas->mlx_win, ft_close_window, datas);
-	mlx_hook(datas->mlx_win, 17, 0, ft_closeclose, datas);
-	mlx_loop(datas->mlx);
-}

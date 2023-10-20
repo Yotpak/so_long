@@ -1,4 +1,4 @@
-SRCS = getmap.c so_long.c utils.c ft_error.c mapcontrol.c itomlx.c movement.c utils2.c movement2.c validmap.c
+SRCS = controlfuncs.c errorfunc.c getmap.c hookfuncs.c imgtomlx.c movement.c movement2.c so_long.c utils.c utils2.c validmap.c
 
 
 NAME = so_long

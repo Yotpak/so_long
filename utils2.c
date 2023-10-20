@@ -61,3 +61,35 @@ char	*ft_itoa(int n)
 	str[i] = '\0';
 	return (str);
 }
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	char	*buffer;
+	int		area;
+
+	area = (nmemb * size);
+	buffer = (char *)malloc(sizeof(char) * area);
+	if (!buffer)
+		return (NULL);
+	while (--area >= 0)
+		buffer[area] = '\0';
+	return ((void *)buffer);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*str;
+	int		i;
+
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i[s] != '\0')
+	{
+		i[str] = i[s];
+		i++;
+	}
+	i[str] = '\0';
+	return (str);
+}
