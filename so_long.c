@@ -6,18 +6,17 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:40:04 by tbalci            #+#    #+#             */
-/*   Updated: 2023/10/17 14:39:18 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/10/20 03:00:50 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_data	*datas;
 	int		fd;
-	
+
 	datas = malloc(sizeof(t_data));
 	if (ac == 2)
 	{
@@ -27,6 +26,8 @@ int main(int ac, char **av)
 			ft_map(datas, av[1], fd);
 			ft_perimetercheck(datas);
 			ft_collcount(datas);
+			ft_unvalidmap_checker(datas);
+			ft_mlxinit(datas);
 		}
 		else
 			ft_printerror("Second Argument Error!\n");
@@ -34,4 +35,3 @@ int main(int ac, char **av)
 	else
 		ft_printerror("The Argument Error!\n");
 }
-

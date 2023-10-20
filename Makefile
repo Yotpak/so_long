@@ -1,4 +1,4 @@
-SRCS = getmap.c so_long.c utils.c ft_error.c mapcontrol.c
+SRCS = getmap.c so_long.c utils.c ft_error.c mapcontrol.c itomlx.c movement.c utils2.c movement2.c validmap.c
 
 
 NAME = so_long
@@ -26,10 +26,13 @@ $(FT_PRINTF) :
 	@make -C ./library/ft_printf
 
 clean:
+	@rm -rf $(NAME)
+	@make clean -C ./library/mlx_library
+	@rm -rf $(LIBC)
+	@make clean -C ./library/ft_printf
 
 fclean: clean
 	@rm -rf $(NAME)
-	@make clean -C ./library/mlx_library
 	@make fclean -C ./library/ft_printf
 
 re: fclean all

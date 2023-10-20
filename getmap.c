@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:46:55 by tbalci            #+#    #+#             */
-/*   Updated: 2023/10/17 13:57:45 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/10/20 02:51:30 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ void	ft_cmap(t_data *datas)
 	int	i;
 
 	i = 0;
-	datas->c_map = malloc(sizeof(char *) * (datas->y + 1));
+	datas->v_map = malloc(sizeof(char *) * (datas->y + 1));
 	while (i < datas->y)
 	{
-		datas->c_map[i] = ft_strdup(datas->map[i]);
+		datas->v_map[i] = ft_strdup(datas->map[i]);
 		i++;
 	}
-	datas->c_map[i] = NULL;
-}                                
+	datas->v_map[i] = NULL;
+}

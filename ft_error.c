@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:40:40 by tbalci            #+#    #+#             */
-/*   Updated: 2023/10/17 11:37:37 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/10/20 03:33:10 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_printerror(char *str)
 	exit (1);
 }
 
-int	ft_argscontrol(char *str) //.ber
+int	ft_argscontrol(char *str)
 {
 	int	i;
 
@@ -32,7 +32,8 @@ int	ft_argscontrol(char *str) //.ber
 	while (str[i])
 		i++;
 	i = i - 1;
-	if (str[i] == 'r' && str[i - 1] == 'e' && str[i - 2] == 'b' && str[i - 3] == '.')
+	if (str[i] == 'r' && str[i - 1] == 'e' && str[i - 2] == 'b'
+		&& str[i - 3] == '.')
 		return (1);
 	return (0);
 }
@@ -50,6 +51,8 @@ void	ft_mapdatascontrol(t_data *datas)
 void	ft_opencontrol(int fd)
 {
 	if (fd == -1)
+	{
 		printf("Open Function Failure!\n");
-	exit (1);
+		exit (1);
+	}
 }
